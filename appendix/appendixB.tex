@@ -1,0 +1,83 @@
+\chapter{Wigner-Eckart定理}
+\label{wigner-eckart}
+根据CG系数表和下式
+\begin{equation}
+	\mel{\frac{3}{2}M}{S^{+}_{\mu}}{\frac{1}{2}m}=\braket{\frac{1}{2}m,1\mu}{\frac{3}{2}M}
+\end{equation}
+可以写出$S^{+}_{\mu}$的矩阵
+\begin{equation}
+	S_{+1}^{\dagger}=
+	\begin{pmatrix}
+		1 & 0 \\
+		0 & \sqrt{\frac{1}{3}} \\
+		0 & 0 \\
+		0 & 0 \\
+	\end{pmatrix}\quad
+	S_{0}^{\dagger}=
+	\begin{pmatrix}
+		0 & 0 \\
+		\sqrt{\frac{2}{3}} & 0 \\
+		0 & \sqrt{\frac{2}{3}} \\
+		0 & 0 \\
+	\end{pmatrix}\quad
+	S_{-1}^{\dagger}=
+	\begin{pmatrix}
+		0 & 0 \\
+		0 & 0 \\
+		\sqrt{\frac{1}{3}} & 0 \\
+		0 & 1 \\
+	\end{pmatrix}
+\end{equation}
+\begin{equation}
+	S_{+1}^{\dagger}=-\frac{1}{\sqrt{2}}(S^{\dagger}_{1}+iS_{2}^{\dagger})\qquad S_{-1}^{\dagger}=\frac{1}{\sqrt{2}}(S_{1}^{\dagger}-iS_{2}^{\dagger})\qquad S_{0}^{\dagger}=S_{3}^{\dagger}
+\end{equation}
+再把上面的关系式变换一下
+\begin{equation}
+	S_{1}^{\dagger}=\frac{1}{\sqrt{2}}(S_{-1}^{\dagger}-S_{+1}^{\dagger})\qquad S_{2}^{\dagger}=\frac{1}{\sqrt{2}}i(S_{+1}^{\dagger}+S_{-1}^{\dagger})\qquad S_{3}^{\dagger}=S_{0}^{\dagger}
+\end{equation}
+就可以写出$S^{\dagger}_{1},S^{\dagger}_{2},S^{\dagger}_{3}$的矩阵
+\begin{equation}
+	S_{1}^{\dagger}=
+	\begin{pmatrix}
+		-\frac{1}{\sqrt{2}} & 0 \\
+		0 & -\frac{1}{\sqrt{6}} \\
+		\frac{1}{\sqrt{6}} & 0 \\
+		0 & \frac{1}{\sqrt{2}} \\
+	\end{pmatrix}\quad
+	S_{2}^{\dagger}=
+	\begin{pmatrix}
+		\frac{1}{\sqrt{2}}i & 0 \\
+		0 & \frac{1}{\sqrt{6}}i \\
+		\frac{1}{\sqrt{6}}i &0  \\
+		0 & \frac{1}{\sqrt{2}}i \\
+	\end{pmatrix}\quad
+	S_{3}^{\dagger}=
+	\begin{pmatrix}
+		0 & 0 \\
+		\sqrt{\frac{2}{3}} & 0 \\
+		0 & \sqrt{\frac{2}{3}} \\
+		0 & 0 \\
+	\end{pmatrix}
+\end{equation}
+有了矩阵形式就可以轻松的得到下面的关系式
+\begin{align*}
+	S_{1}S_{1}^{\dagger}=&
+	\begin{pmatrix}
+		-\sqrt{\frac{1}{2}} & 0 & \sqrt{\frac{1}{6}} & 0 \\
+		0 & -\sqrt{\frac{1}{6}} & 0 & \sqrt{\frac{1}{2}} \\
+	\end{pmatrix}
+	\begin{pmatrix}
+		-\frac{1}{\sqrt{2}} & 0 \\
+		0 & -\frac{1}{\sqrt{6}} \\
+		\frac{1}{\sqrt{6}} & 0 \\
+		0 & \frac{1}{\sqrt{2}} \\
+	\end{pmatrix}\\
+	=&\frac{2}{3}
+	\begin{pmatrix}
+		1 & 0 \\
+		0 & 1 \\
+	\end{pmatrix}
+\end{align*}
+\begin{equation}
+	S_{i}S_{j}^{\dagger}=\frac{2}{3}\delta_{ij}-\frac{i}{3}\epsilon_{ijk}\sigma_{k}
+\end{equation}

@@ -1,0 +1,75 @@
+%!TEX program = xelatex
+%!BIB program = biber
+%%% compiler: xelatex -> biber -> xelatex*2
+%%% test version: TeX Live 2024
+%%% system: Archlinux
+%%% datetime: Tue Jun 25 01:48:51 AM CST 2024
+\documentclass[12pt,a4paper,openany]{ctexbook}%%%%字体大小默认为12pt(小四)
+%%%% setting/package 里面是latex编译所调用的宏包，format为全文的设置
+\input{setting/package}
+\input{setting/format}
+%\setCJKmainfont{Source Han Serif SC}%替换字体
+%%%% 图片请放在figures文件夹内
+\graphicspath{{figures/}{cover/}}
+\begin{document}
+%%%% 封面:ccover 和cover为毕业论文封面，kccover为课程论文封面
+\input{cover/ccover}
+%\input{cover/cover}
+\includepdf{cover/haipeng.pdf}
+%\input{cover/kccover}
+\pagenumbering{Roman}
+\begin{spacing}{1.5}%%%控制间距
+\cleardoublepage
+%%%% abstract中为文章摘要
+\phantomsection
+\addcontentsline{toc}{chapter}{摘要}
+\input{abstract/cabstract}
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Abstract}
+\input{abstract/eabstract}
+%\cleardoublepage
+%%%%%我始终不明白为什么要求在目录中添加目录这一项？
+\newpage
+\phantomsection
+%\listoffigures%%%%插图目录
+%\listoftables%%%%表格目录
+\addcontentsline{toc}{chapter}{目录}
+\tableofcontents%%%%目录
+\renewcommand{\labelenumi}{(\arabic{enumi})}%%%item标号形式
+\cleardoublepage%%%%%%从奇数页开始正文
+\pagenumbering{arabic}
+%%%%% chap中为文章的正文
+\include{chap/chap01} 
+\include{chap/chap02}
+\include{chap/chap03}
+\include{chap/chap04}
+\include{chap/chap05}
+\include{chap/chap06}
+\include{chap/chap07}
+\include{chap/chap08}
+\appendix
+\renewcommand{\theequation}{\Alph{chapter}-\arabic{equation}}
+\renewcommand{\thesubsubsection}{\arabic{subsubsection}.}
+\setcounter{secnumdepth}{3}
+%\include{appendix/appendixA}
+%\include{appendix/appendixB}
+\phantomsection
+\addcontentsline{toc}{chapter}{参考文献}
+\printbibliography
+%\iffalse
+\backmatter%后记部分，页码格式不变，继续正常计数；其后的\chapter 不编号。
+\input{appendix/publications}
+\addcontentsline{toc}{chapter}{攻读博士学位期间论文发表情况}
+\titlecontents{chapter}[9pt]{\addvspace{0pc}\songti\bf\zihao{-4}\bfseries\vspace{0.2cm}}{}{}{}
+\phantomsection
+\addcontentsline{toc}{chapter}{致谢}
+\input{appendix/acknowledgements}
+\phantomsection
+\addcontentsline{toc}{chapter}{论文独创性声明}
+\addcontentsline{toc}{chapter}{论文使用授权声明}
+%\input{appendix/announce}
+\includepdf{appendix/announce.pdf}
+%\fi
+\end{spacing}
+\end{document}
